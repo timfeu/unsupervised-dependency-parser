@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>UniversalPOS</name>
+    <description>Universal POS tag annotation</description>
+    <vendor>Apache Software Foundation</vendor>
+    <version>1.0</version>
+    <types>
+        <typeDescription>
+            <name>de.tudarmstadt.informatik.lt.sogaardparser.type.UniversalPOS</name>
+            <description></description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+            <features>
+                <featureDescription>
+                    <name>posValue</name>
+                    <description>Universal POS string</description>
+                    <rangeTypeName>uima.cas.String</rangeTypeName>
+                </featureDescription>
+            </features>
+        </typeDescription>
+    </types>
+</typeSystemDescription>

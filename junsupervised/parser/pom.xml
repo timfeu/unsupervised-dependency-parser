@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <name>JUnsupervisedParser</name>
+    <description>An implementation of Anders Søgaard's unsupervised dependency parser for Apache UIMA.</description>
+
+    <parent>
+        <artifactId>junsupervised</artifactId>
+        <groupId>de.tudarmstadt.informatik.lt</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>junsupervised-parser</artifactId>
+
+
+    <organization>
+        <name>Tim Feuerbach</name>
+    </organization>
+
+    <inceptionYear>2016</inceptionYear>
+
+    <properties>
+        <license.licenseName>mit</license.licenseName>
+    </properties>
+
+
+
+    <dependencies>
+        <dependency>
+            <groupId>de.tudarmstadt.informatik.lt</groupId>
+            <artifactId>pagerank</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.uima</groupId>
+            <artifactId>uimafit-core</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.api.syntax-asl</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.tudarmstadt.ukp.dkpro.core</groupId>
+            <artifactId>de.tudarmstadt.ukp.dkpro.core.api.segmentation-asl</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.carrotsearch</groupId>
+            <artifactId>hppc</artifactId>
+            <version>0.6.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>1.8</version>
+
+                <configuration>
+                    <verbose>false</verbose>
+                    <includes>
+                        <includes>**/*.java</includes>
+                    </includes>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>generate-license-headers</id>
+                        <goals>
+                            <goal>update-file-header</goal>
+                        </goals>
+
+                        <configuration>
+                            <licenseName>Apache 2.0</licenseName>
+                            <roots>
+                                <root>src/main/java</root>
+                                <root>src/test/java</root>
+                            </roots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
